@@ -44,7 +44,7 @@ public class Heap {
 
     }
 
-    private void increseKey(int i, int p) throws IllegalArgumentException{
+    private void increaseKey(int i, int p) throws IllegalArgumentException{
         if (p < this.heap[i]){
             throw new IllegalArgumentException("prio. too small.");
         }
@@ -64,8 +64,8 @@ public class Heap {
         if (this.heapSize > this.heap.length){
             System.out.println("error");
         }
-        this.heap[this.heapSize] = -1 * Integer.MAX_VALUE;
-        increseKey(this.heapSize, p);
+        this.heap[this.heapSize - 1] = -1 * Integer.MAX_VALUE;
+        increaseKey(this.heapSize - 1, p);
     }
 
     private int extractMax() throws IllegalArgumentException{
