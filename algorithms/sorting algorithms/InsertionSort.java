@@ -1,6 +1,6 @@
-public class InsertionSort {
+public class InsertionSort implements SortingAlgo {
 
-    public static void insertionSort(int[] A){
+    private static void insertionSort(int[] A){
 
         for (int i = 1; i<A.length; i++){
 
@@ -14,5 +14,10 @@ public class InsertionSort {
 
             A[++j] = key;
         }
+    }
+
+    @Override
+    public void sort(int[] A, int startIndex, int endIndex) {
+        insertionSort(A);
     }
 }
