@@ -30,5 +30,17 @@ public class TestSort {
     }
 
     public static void main(String[] args) {
+    	
+    	int length = 5000;
+    	int[] data = new int[length];
+    	SortingAlgo sortingAlgo = new QuickSort();
+    	
+    	data = getRandomArray(data.length, 0, 5000);
+    	
+    	sortingAlgo.sort(data, 0, data.length);
+    	
+    	for (int i = 0; i < data.length-1; i++)
+    		assert data[i+1] >= data[i]: "data[" + (i+1) + "] less than data[" + i + "]" ;
+    		    	
     }
 }
